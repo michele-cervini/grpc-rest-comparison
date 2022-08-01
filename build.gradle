@@ -1,0 +1,6 @@
+ext {
+    springBootVersion = "2.7.1"
+    springDependencyManagementVersion = '1.0.12.RELEASE'
+    grpcSpringBootStarterVersion = '2.13.1.RELEASE'
+    jacksonVersion = "2.13.3"
+}

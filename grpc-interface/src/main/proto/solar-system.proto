@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "org.proto.solarSystem";
+option java_outer_classname = "SolarSystemProto";
+
+package solarSystem;
+
+service SolarSystemService {
+  rpc GetSingleSolarSystem(google.protobuf.Empty) returns(SolarSystem);
+  rpc GetGalaxy(google.protobuf.Empty) returns(Galaxy);
+  rpc StreamGalaxySolarSystems(google.protobuf.Empty) returns(stream SolarSystem);
+}
+
+message Galaxy {
+  repeated SolarSystem solarSystems = 1;
+}
+
+message SolarSystem {
+  repeated SolarSystemBody bodies = 1;
+}
+
+message SolarSystemBody {
+  string id = 1;
+  string name = 2;
+  string englishName = 3;
+  bool isPlanet = 4;
+  repeated Moon moons = 5;
+  uint64 semimajorAxis = 6;
+  uint64 perihelion = 7;
+  uint64 aphelion = 8;
+  float eccentricity = 9;
+  float inclination = 10;
+  Mass mass = 11;
+  Volume vol = 12;
+  float density = 13;
+  float gravity = 14;
+  float escape = 15;
+  float meanRadius = 16;
+  float equaRadius = 17;
+  float polarRadius = 18;
+  float flattening = 19;
+  string dimension = 20;
+  float sideralOrbit = 21;
+  float sideralRotation = 22;
+  Planet aroundPlanet = 23;
+  string discoveredBy = 24;
+  string discoveryDate = 25;
+  string alternativeName = 26;
+  float axialTilt = 27;
+  uint64 avgTemp = 28;
+  float mainAnomaly = 29;
+  float argPeriapsis = 30;
+  float longAscNode = 31;
+  string bodyType = 32;
+}
+
+message Moon {
+  string moon = 1;
+}
+
+message Mass {
+  float massValue = 1;
+  int32 massExponent = 2;
+}
+
+message Volume {
+  float volValue = 1;
+  int32 volExponent = 2;
+}
+
+message Planet {
+  string planet = 1;
+}

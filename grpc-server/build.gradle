@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id "io.spring.dependency-management" version "${springDependencyManagementVersion}"
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "net.devh:grpc-server-spring-boot-starter:${grpcSpringBootStarterVersion}"
+    implementation 'com.google.protobuf:protobuf-java-util:3.21.5'
+    implementation project (":grpc-interface")
+}
+
+repositories {
+    mavenCentral()
+}

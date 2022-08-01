@@ -1,0 +1,13 @@
+rootProject.name = 'grpc-rest-comparison'
+include 'rest'
+include 'rest-client'
+include 'domain'
+include 'grpc'
+include 'grpc-interface'
+include 'grpc-server'
+include 'grpc-server:grpc-client'
+findProject(':grpc-server:grpc-client')?.name = 'grpc-client'
+include 'grpc-client'
+include 'rest-server'
+include 'rest-domain'
+
